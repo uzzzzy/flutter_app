@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/components/custom_app_bar.dart';
+import 'package:flutter_app/components/item_list.dart';
 
 class MyHomePage extends StatefulWidget {
   final String title;
@@ -16,15 +18,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.indigo,
-      body: Center(
-        child: Text(
-          widget.title,
-          style: const TextStyle(
-            color: Colors.white,
-            decoration: TextDecoration.none,
-            fontSize: 50,
-          ),
-        ),
+      body: Column(
+        children: const [
+          CustomAppBar(),
+          ItemList(itemList: 1000),
+        ],
       ),
     );
   }
