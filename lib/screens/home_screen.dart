@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/custom_app_bar.dart';
 import 'package:flutter_app/components/item_list.dart';
+import 'package:flutter_app/screens/second_screen.dart';
 
 class MyHomePage extends StatefulWidget {
   final String title;
@@ -19,9 +20,20 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.indigo,
       body: Column(
-        children: const [
-          CustomAppBar(),
-          ItemList(itemList: 1000),
+        children: [
+          const CustomAppBar(),
+          Center(
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SecondScreen()),
+                  );
+                },
+                child: const Text('secondScreen')),
+          ),
+          const ItemList(itemList: 1000),
         ],
       ),
     );
