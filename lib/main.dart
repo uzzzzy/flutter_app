@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/constant/app.dart';
 import 'package:flutter_app/screens/home_screen.dart';
+import 'package:flutter_app/screens/second_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,10 +16,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: appName),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const MyHomePage(title: appName),
+        '/second': (context) => const SecondScreen()
+      },
     );
   }
 }
