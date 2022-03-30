@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/custom_app_bar.dart';
 import 'package:flutter_app/components/item_list.dart';
+import 'package:flutter_app/screens/blog_screen.dart';
 import 'package:flutter_app/screens/second_screen.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -35,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const SecondScreen()),
+                                  builder: (context) => const BlogScreen()),
                             );
                           },
                           child: const Text('secondScreen')),
